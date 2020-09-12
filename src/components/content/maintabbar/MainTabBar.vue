@@ -1,27 +1,8 @@
 <template>
   <tab-bar>
-    <!-- <router-view></router-view> -->
-    <!-- <tab-bar-item></tab-bar-item> -->
-    <!-- <div class="tab-bar-item">
-      <img src="../../assets/img/tabbar/home.svg" />
-      首页
-    </div>
-    <div class="tab-bar-item">
-      <img src="../../assets/img/tabbar/home.svg" />
-      分类
-    </div>
-    <div class="tab-bar-item">
-      <img src="../../assets/img/tabbar/home.svg" />
-      购物车
-    </div>
-    <div class="tab-bar-item">
-      <img src="../../assets/img/tabbar/home.svg" />
-      我的
-    </div> -->
-    <!-- 使用tab-bar-item具名插槽，动态设置其中的内容 -->
     <tab-bar-item path="/home">
-      <img slot="item-icon" src="../assets/img/tabbar/home.svg"/>
-      <img slot="item-icon-active" src="../assets/img/tabbar/home_active.svg" />
+      <img slot="item-icon" src="~assets/img/tabbar/home.svg"/>
+      <img slot="item-icon-active" src="~assets/img/tabbar/home_active.svg" />
       <div slot="item-text">首页</div>
     </tab-bar-item>
     <tab-bar-item path="/category">
@@ -47,7 +28,7 @@
   import TabBarItem from "components/common/tabbar/TabBarItem"
 
   export default {
-    name:"MainTabBar",
+    name: "MainTabBar",
     components: {
       TabBar,
       TabBarItem
