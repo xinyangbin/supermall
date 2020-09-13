@@ -8,6 +8,7 @@
     </nav-bar>
     <swiper>
       <swiper-item v-for="(item, index) in banners" :key="index">
+      <!-- <swiper-item v-for="item in banners"> -->
         <a :href="item.link">
           <img :src="item.image" alt="">
         </a>
@@ -21,7 +22,7 @@
   // import Swiper from 'components/common/swiper/Swiper'
   // import SwiperItem from 'components/common/swiper/SwiperItem'
   import {getHomeMultidata} from 'network/home'
-  import {Swiper, SwiperItem} from 'components/common/swiper'
+  import {Swiper, SwiperItem} from 'components/swiper'
 
 
   export default {
