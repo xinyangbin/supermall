@@ -6,37 +6,31 @@
         购物街
       </div>
     </nav-bar>
-    <swiper>
-      <swiper-item v-for="(item, index) in banners" :key="index">
-      <!-- <swiper-item v-for="item in banners"> -->
-        <a :href="item.link">
-          <img :src="item.image" alt="">
-        </a>
-      </swiper-item>
-    </swiper>
+    <home-swiper :banners="banners"></home-swiper>
+    <recommend-view :recommends='recommends'></recommend-view>
   </div>
 </template>
 
 <script>
   import NavBar from 'components/common/navbar/NavBar'
-  // import Swiper from 'components/common/swiper/Swiper'
-  // import SwiperItem from 'components/common/swiper/SwiperItem'
+  import HomeSwiper from './childrenComps/HomeSwiper'
+  import RecommendView from './childrenComps/RecommendView'
+
   import {getHomeMultidata} from 'network/home'
-  import {Swiper, SwiperItem} from 'components/swiper'
 
 
   export default {
-    name:"Home",
+    name: "Home",
     components: {
       NavBar,
-      Swiper,
-      SwiperItem
+      HomeSwiper,
+      RecommendView
     },
     data() {
       return {
         // result: null
         banners: [],
-        recommands: []
+        recommends: []
       }
     },
     // 创建生命周期函数
@@ -44,12 +38,12 @@
       // 1.请求多个数据
       getHomeMultidata()
       .then(res => {
-        console.log(res);
+        // console.log(res);
         // 此处this.result拿到的是组件对象的内容
         // 将数据存储在result这个变量中
         // this.result = res;
         this.banners = res.data.banner.list;
-        this.recommands = res.data.recommand;
+        this.recommends = res.data.recommend.list;
       })
       .catch(err => {
         console.log(err);
