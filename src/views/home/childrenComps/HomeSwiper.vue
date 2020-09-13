@@ -21,7 +21,7 @@ export default {
       type: Array,
       default() {
         return []
-      }
+      }   
     }
   },
   components: {
